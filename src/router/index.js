@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/Home'
-import CompanyAccountList from '@/components/content/account/CompanyAccountList'
+import CompanyAccountList from '@/components/content/article/ArticleList'
 // import TimeEntries from 'components/TimeEntries'
 // import LogTime from 'components/LogTime'
 
@@ -18,7 +18,7 @@ export default new Router({
       component: Home
     },
     {
-    	path:'/account/company',
+    	path:'/article/list',
     	component:CompanyAccountList
     }
 
