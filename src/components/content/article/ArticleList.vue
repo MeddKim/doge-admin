@@ -11,7 +11,7 @@
 <template>
   <div class="container">
     <el-table
-      :data="tableData"
+      :data="contentList"
       stripe
       style="width: 100%">
       <el-table-column
@@ -40,12 +40,12 @@
         width="">
       </el-table-column>
       <el-table-column
-        prop="comment_num"
+        prop="commentCount"
         label="评论"
         width="">
       </el-table-column>
       <el-table-column
-        prop="publish_time"
+        prop="created"
         label="发布日期"
         width="">
       </el-table-column>
@@ -58,24 +58,34 @@
     <!-- </div> -->
                   <button
                 class="btn btn-xs btn-danger delete-button"
-                @click="findContents()">
+                @click="getContentList()">
               X
               </button>
   </div>
 </template>
 
 <script>
+  import { mapState } from 'vuex'
+
   export default {
     data() {
       return {
-        tableData: [{"title":"Python学习笔记","author":"meddkim","kind":"学习","subject":"ptyon基础学习","tag":"Java,Python","comment_num":5,"publish_time":"2017-05-23 18:24:05"},{"title":"Python学习笔记","author":"meddkim","kind":"学习","subject":"ptyon基础学习","tag":"Java,Python","comment_num":5,"publish_time":"2017-05-23 18:24:05"}]
       }
     },
-         methods : {
-        findContents() {
-          // this.$store.dispatch('deletePlan',idx)
-          this.$store.dispatch('findContents');
-        }
+
+    computed:{
+      ...mapState({
+        contentList : state => state.article.contentList
+      })
+    },
+    methods : {
+      getContentList() {
+        this.$store.dispatch('getContentList');
+
       }
+    },
+    created: function created(){
+      this.getContentList();
+    }
   }
 </script>
