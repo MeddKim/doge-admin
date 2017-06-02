@@ -17,7 +17,7 @@
       <el-table-column
         prop="title"
         label="标题"
-        >
+        > 
       </el-table-column>
       <el-table-column
         prop="author"
@@ -56,11 +56,6 @@
         :total="1000" class="page">
       </el-pagination>
     <!-- </div> -->
-                  <button
-                class="btn btn-xs btn-danger delete-button"
-                @click="getContentList()">
-              X
-              </button>
   </div>
 </template>
 

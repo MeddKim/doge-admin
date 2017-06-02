@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/components/Home'
-import CompanyAccountList from '@/components/content/article/ArticleList'
+import Home from '@/views/Home'
+import CompanyAccountList from '@/views/article/ArticleList'
 // import TimeEntries from 'components/TimeEntries'
 // import LogTime from 'components/LogTime'
 
