@@ -10,6 +10,7 @@
 </style>
 <template>
   <div class="container">
+    <link-item v-bind:items = 'items'></link-item>
     <el-table
       :data="contentList"
       stripe
@@ -61,13 +62,15 @@
 
 <script>
   import { mapState } from 'vuex'
+  import LinkItem from '../../components/LinkItem'
 
   export default {
     data() {
       return {
+        items:[{'name':'heheh'},{'name':'hahahaha'},{'name':'hahahaha'},{'name':'hahahaha'}]
       }
     },
-
+    components: {LinkItem},
     computed:{
       ...mapState({
         contentList : state => state.article.contentList
