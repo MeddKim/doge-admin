@@ -7,10 +7,20 @@ function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
 
+var lang = require('highlight.js-async-webpack/src/file.lang.hljs.js');
+var _entry= {
+    back_end: './src/main.js', // 原始入口
+    vue: ['vue']
+};
+for (var i = 0; i < lang.length; i++) {
+    _entry[lang[i]] = ['mavon-editor/dist/js/' + lang[i] + '.js']
+}
+
 module.exports = {
-  entry: {
-    app: './src/main.js'
-  },
+  // entry: {
+  //   app: './src/main.js'
+  // },
+  entry:_entry,
   output: {
     path: config.build.assetsRoot,
     filename: '[name].js',

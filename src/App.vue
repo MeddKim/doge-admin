@@ -84,8 +84,8 @@
                             <i class="el-icon-menu"></i>
                             文章
                         </template>   
-                        <el-menu-item index="article/list"> 所有文章 </el-menu-item>
-                        <el-menu-item index="1-2"> 撰写文章 </el-menu-item>
+                        <el-menu-item index="/article/list"> 所有文章 </el-menu-item>
+                        <el-menu-item index="/article/create"> 撰写文章 </el-menu-item>
                         <el-menu-item index="1-3"> 分类 </el-menu-item>
                         <el-menu-item index="1-4"> 专题 </el-menu-item>
                         <el-menu-item index="1-5"> 标签 </el-menu-item>

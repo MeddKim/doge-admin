@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/views/Home'
-import CompanyAccountList from '@/views/article/ArticleList'
+import ArticleList from '@/views/article/ArticleList'
+import ArticleCreate from '@/views/article/ArticleCreate' 
 // import TimeEntries from 'components/TimeEntries'
 // import LogTime from 'components/LogTime'
 
@@ -19,7 +20,12 @@ export default new Router({
     },
     {
     	path:'/article/list',
-    	component:CompanyAccountList
+    	component:ArticleList
+    }
+    ,
+    {
+      path:'/article/create',
+      component:ArticleCreate
     }
 
  //    {
