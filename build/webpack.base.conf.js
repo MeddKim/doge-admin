@@ -9,7 +9,7 @@ function resolve (dir) {
 
 var lang = require('highlight.js-async-webpack/src/file.lang.hljs.js');
 var _entry= {
-    back_end: './src/main.js', // 原始入口
+    app: './src/main.js', // 原始入口
     vue: ['vue']
 };
 for (var i = 0; i < lang.length; i++) {
@@ -23,7 +23,7 @@ module.exports = {
   entry:_entry,
   output: {
     path: config.build.assetsRoot,
-    filename: '[name].js',
+    filename: 'js/[name].js',
     publicPath: process.env.NODE_ENV === 'production'
       ? config.build.assetsPublicPath
       : config.dev.assetsPublicPath
