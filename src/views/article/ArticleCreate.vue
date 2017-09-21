@@ -1,9 +1,23 @@
 <style scoped>
-
+.container .arctle-title{
+  
+}
+.container .arctle-content{
+  margin-top: 15px; 
+}
+.container .arctle-operate{
+  margin-top: 15px; 
+}
 </style>
 <template>
   <div class="container">
-    <mavon-editor style="height: 100%" :ishljs = "true"></mavon-editor>
+    <el-input size="large" placeholder="请输入文章标题"> </el-input>
+    <mavon-editor style="height: 100%" :ishljs = "true" class="arctle-content" @change = "contentChange"></mavon-editor>
+    <div class="arctle-operate" >
+        <el-button type="primary" @click="saveArticle">
+          保存
+        </el-button>
+    </div>
   </div>
 </template>
 
@@ -20,18 +34,20 @@
     },
     components: {mavonEditor,mapState},
     computed:{
-      ...mapState({
-        contentList : state => state.article.contentList
-      })
+
     },
     methods : {
-      getContentList() {
-        this.$store.dispatch('getContentList');
+      contentChange(text,mkContent){
+        console.log(text);
+        console.log(mkContent);
+        console.log("哈哈哈");
+      },
+      saveArticle(){
 
       }
     },
     created: function created(){
-      this.getContentList();
+      // this.getContentList();
     }
   }
 </script>
