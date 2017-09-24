@@ -11,13 +11,19 @@
 </style>
 <template>
   <div class="container">
-    <el-input size="large" placeholder="请输入文章标题"> </el-input>
-    <mavon-editor style="height: 100%" :ishljs = "true" class="arctle-content" @change = "contentChange"></mavon-editor>
-    <div class="arctle-operate" >
+    <el-row>
+      <el-col :span="18">
+          <el-input size="large" placeholder="请输入文章标题"> </el-input>
+          <mavon-editor style="height: 100%" :ishljs = "true" class="arctle-content" @change = "contentChange"></mavon-editor>
+      </el-col>
+    </el-row>
+    <el-row>
+      <div class="arctle-operate" >
         <el-button type="primary" @click="saveArticle">
-          保存
+                保存
         </el-button>
-    </div>
+      </div>
+    </el-row>
   </div>
 </template>
 
@@ -29,7 +35,8 @@
   export default {
     data() {
       return {
-        items:[{'name':'heheh'},{'name':'hahahaha'},{'name':'hahahaha'},{'name':'hahahaha'}]
+        arctleMD:"",
+        arctleHTML:"",
       }
     },
     components: {mavonEditor,mapState},
@@ -37,13 +44,13 @@
 
     },
     methods : {
-      contentChange(text,mkContent){
-        console.log(text);
-        console.log(mkContent);
-        console.log("哈哈哈");
+      contentChange(mdContent,htmlContent){
+          this.arctleMD = mdContent;
+          this.arctleHTML = htmlContent;
       },
       saveArticle(){
-
+          console.log(this.arctleMD);
+          console.log(this.arctleHTML);
       }
     },
     created: function created(){
